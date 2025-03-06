@@ -15,19 +15,30 @@ import java.util.Date;
 public class JwtTokenProvider {
 
 
-	private String jwtSecret="daf66e01593f61a15b857cf433aae03a005812b31234e149036bcc8dee755dbb";
+//	private String jwtSecret="daf66e01593f61a15b857cf433aae03a005812b31234e149036bcc8dee755dbb";
+//
+//
+//	private long jwtExpirationDate=604800000;
+//
+//	public JwtTokenProvider(String jwtSecret, long jwtExpirationDate) {
+//		this.jwtSecret = jwtSecret;
+//		this.jwtExpirationDate = jwtExpirationDate;
+//	}
+//@Value("${app.jwt-secret}")
+//private String jwtSecret;
+//
+//	@Value("${app-jwt-expiration-milliseconds}")
+//	private long jwtExpirationDate;
 
+//	public JwtTokenProvider() {
+//	}
+	private final String jwtSecret;
+	private final long jwtExpirationDate;
 
-	private long jwtExpirationDate=604800000;
-
-	public JwtTokenProvider(String jwtSecret, long jwtExpirationDate) {
-		this.jwtSecret = jwtSecret;
-		this.jwtExpirationDate = jwtExpirationDate;
+	public JwtTokenProvider(JwtConfig jwtConfig) {
+		this.jwtSecret = jwtConfig.getJwtSecret();
+		this.jwtExpirationDate = jwtConfig.getJwtExpirationMilliseconds();
 	}
-
-	public JwtTokenProvider() {
-	}
-
 	// generate JWT token
 	public String generateToken(Authentication authentication){
 
