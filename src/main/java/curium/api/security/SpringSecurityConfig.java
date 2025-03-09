@@ -64,23 +64,6 @@ public class SpringSecurityConfig {
 	public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
 		return configuration.getAuthenticationManager();
 	}
-//
-//    @Bean
-//    public UserDetailsService userDetailsService(){
-//
-//        UserDetails prod_user= User.builder()
-//                .username("prod_user")
-//                .password(passwordEncoder().encode("prod_user"))
-//                .roles("PRODUCTION")
-//                .build();
-//
-//        UserDetails admin = User.builder()
-//                .username("admin")
-//                .password(passwordEncoder().encode("admin"))
-//                .roles("ADMIN")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(prod_user, admin);
-//    }
+
 }
 
