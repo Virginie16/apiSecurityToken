@@ -16,7 +16,7 @@ public class BiochargeService {
 
 
 
-    public List<Biocharge> getLotsFiltrés(String site, String produit) {
+    public List<Biocharge> getLotsFiltres(String site, String produit) {
         return biochargeRepository.findBySiteProduitAndPeriodeWithLogging(site, produit);
     }
 }

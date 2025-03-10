@@ -14,6 +14,11 @@ public class SiteService {
 	@Autowired
 	private SiteRepository siteRepository;
 
+	// Vérifie si le site existe dans la BDD
+	public boolean isSiteConforme(String site) {
+		return siteRepository.existsByNomSite(site); // Hypothèse : méthode personnalisée dans le repository
+	}
+
 	public List<String> getAllSites() {
 		return siteRepository.findAll()
 				.stream()

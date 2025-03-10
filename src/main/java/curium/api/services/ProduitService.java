@@ -14,6 +14,11 @@ public class ProduitService {
     @Autowired
     private ProduitRepository produitRepository;
 
+    // Vérifie si le produit existe dans la BDD
+    public boolean isProduitConforme(String produit) {
+        return produitRepository.existsByNomProduit(produit);
+    }
+
     public List<String> getAllProduits() {
         return produitRepository.findAll()
                 .stream()

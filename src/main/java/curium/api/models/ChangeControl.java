@@ -44,6 +44,21 @@ public class ChangeControl {
     @JoinColumn(name = "site", referencedColumnName = "trigramme_site", insertable = false, updatable = false)
     private Site siteEntity;
 
+    private String message;
+
+    public ChangeControl(String message) {
+        this.message = message;
+    }
+
+    // Getter et Setter pour message
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     // Constructeur par défaut
     public ChangeControl() {}
 
